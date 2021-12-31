@@ -1,3 +1,4 @@
+from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, redirect
@@ -8,6 +9,18 @@ from.models import Project
 def home(request):
     projects = Project.objects.all()
     return render(request, 'portfolio/home.html', {'projects': projects})
+
+
+def file_upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'portfolio/file_upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'portfolio/file_upload.html')
 
 
 def contact(request):
