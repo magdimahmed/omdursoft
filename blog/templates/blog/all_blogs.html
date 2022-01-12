@@ -1,19 +1,24 @@
 {% extends 'portfolio/base.html'%}
 {% block content %}
 
-Hello blog
-
-<h2>We have {{blogs.count}} blog{{blogs.count|pluralize}}</h2>
-
+<section class="p-sm-5 b-2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col text-center mb-3">
+       <h1 class="text-warning display-2">We have ({{blogs.count}}) Blog{{blogs.count|pluralize}}</h1>
+      </div>
+    </div>
+    <div class="row">
 {% for blog in blogs %}
-<dl>
-    <dt><a href="{% url 'blog:detail' blog.id %}">{{blog.title}}</a></dt>
-    <dt>{{blog.description| striptags |truncatechars:10}}</dt>
-    <dt>{{blog.date|date:'M d y'}}</dt>
-</dl>
-<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
-<h2>{{blog.description| striptags |truncatechars:10}}</h2>
-<h2>{{blog.date|date:'M d y'}}</h2>
-{% endfor %}
 
-  {% endblock %}
+     <div class="col-lg-3 col-sm-6">
+       <a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
+       <p class="my-3 text-muted">{{blog.description| striptags |truncatechars:10}}</p>
+       <h3>{{blog.date|date:'M d y'}}</h3>
+      </div>
+
+{% endfor %}
+</div>
+</div>
+</section>
+{% endblock %}
