@@ -4,25 +4,28 @@
 {% load static %}
 <br>
 <br>
-<div class="container-fluid text-sm-right p-5 text-black" style="background-color: #924403;"> <!-- bg-light is background color & p-5 is padding -->
+<section class=" p-5 mission">
+<div class="container-fluid text-sm-right p-5 text-black" "> <!-- bg-light is background color & p-5 is padding -->
         <div class="row">
         <div class="col-md-6 px-0 pe-3">
-          <h1 class="display-3 fs-2 fw-bold text-white font-italic">OmdurSoft! (under construction)</h1>
-          <h3 class="display-6 fs-3 fst-italic text-white font-italic">Digital transformation tech-focused</h3>
+          <h1 class="display-4 fs-2 fw-bold text-white font-italic mb-4">Omdur<span class="text-white">SOFT</span>! (under construction)</h1>
+          <div class="underline mb-4"></div>
+          <h3 class="display-3 fs-3 fst-italic text-white font-italic mb-4">Digital transformation tech-focused</h3>
           <p class="lead fs-4 lh-1 text-white">Aims to bridge the digital divide to ensure an inclusive digital economy for all. Digital technologies offer a chance to unlocking new pathways for rapid economic growth, innovation, job creation and access to services. Our focus will be to champion and innovate homegrown enterprise solutions that reflect the context and nuances of the Sudan market needs.</p>
           <p class="text-end text-white">نحن نعلم مدى أهمية التكنولوجيا لكسر الحواجز التي تحول دون الشمول المالي. ، التكنولوجيا ليست غاية في حد ذاتها ولكنها عامل تمكين قيم على الطريق نحو تحقيق التنمية المستدامة والشاملة للجميع.</p>
           <p class="lead mb-0"><a href="{% url 'blog:all_blogs'%}" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
         <br>
-        <div class="col-md-5 px-0 shadow-lg rounded pl-3 ps-3" style="background-color: #af5002;"> 
+       
+        <div class="col-lg-4 mx-auto shadow-lg rounded  img-fluid sud-image mt-4 justify-content-center" > 
             <img class="rounded-circle mx-auto d-block" src="{% static 'portfolio/siw9.jpeg' %}"  alt="Generic placeholder image" width="350" height="350">
         </div>
         <br>
-        <div class="col-md-1  ml-3"> 
-            <img class="rounded-circle float-end" src="{% static 'portfolio/sudan-flag.png' %}"  alt="Generic placeholder image" width="40" height="40">
-        </div>
-    </div>    
+    </div>   
+    </div> 
+   
 </div>
+</section>
 <br>
 <br>
 <br>
@@ -32,7 +35,7 @@
         <div class="row">
         {% for project in projects %}
           <div class="col-lg-4 mx-auto">
-            <img class="rounded-circle" src="{{project.image.url}}"  alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle " src="{{project.image.url}}"  alt="Generic placeholder image" width="140" height="140">
             <h2>{{project.title}}</h2>
             <p>{{project.description}}</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
@@ -83,6 +86,7 @@
         <!-- /END THE FEATURETTES -->
 
       </div><!-- /.container -->  
+
 <h2>{{project.title}}</h2>
 <h2>{{project.description}}</h2>
 <image src="{{project.image.url}}">
