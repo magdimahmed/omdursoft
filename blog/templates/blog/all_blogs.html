@@ -15,9 +15,9 @@
      <div class="col-lg-4">
        <div class="card card-1">
          <div class="card-body">
-       <a class="text-decoration-none" href="{% url 'blog:detail' blog.id %}"><h2 class="mb-5">{{blog.title}}</h2></a>
-       <p class="text-dark py-3">{{blog.description| striptags |truncatechars:30}}</p>
-       <h5>{{blog.date|date:'M d y'}}</h5>
+       <a class="text-decoration-none text-success" href="{% url 'blog:detail' blog.id %}"><h2 class="mb-5">{{blog.title}}</h2></a>
+       <p class="text-black py-3">{{blog.description| striptags |truncatechars:60}}</p>
+       <h7>{{blog.date|date:'M d y'}}</h7>
       </div>
      </div>
      </div>

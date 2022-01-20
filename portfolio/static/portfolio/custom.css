@@ -16,7 +16,7 @@ body {
 }
 
 .mission{
-  background: #151f20;  
+  background: #e9ecef;  
 }
 
 .underline {
@@ -70,7 +70,20 @@ input:focus {
 }
 
 .card-1 {
-
+    background-color: #e9ecef;
     box-shadow: 7px 18px 50px #555;
+
+}
+
+.banner-headding:first-letter{
+  font-family: Great Vibes, cursive;
+  font-size: 3rem;
+  margin-right: 5px;
+
+}
+
+.arabic {
+
+  font-size: 1.5rem;
 
 }
