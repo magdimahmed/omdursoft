@@ -16,7 +16,7 @@ body {
 }
 
 .mission{
-  background-color: #e9ecef;  
+   background: linear-gradient(rgba(0,0,0, 1) 0%, rgba(0,0,0, .95%) 50%, transparent 50%); 
 }
 
 .underline {
